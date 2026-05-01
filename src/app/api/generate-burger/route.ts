@@ -57,7 +57,7 @@ export async function POST(request: Request) {
 
         responseText = result.response.text().trim();
         lastError = null;
-        break; // Success, stop trying other keys
+        break; 
       } catch (err: any) {
         lastError = err;
         console.warn(`API key failed, trying next...`, err.message);
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
       throw lastError || new Error("All API keys failed");
     }
 
-    // Clean up any markdown formatting if present
+  
     let jsonStr = responseText;
     if (jsonStr.startsWith("```")) {
       jsonStr = jsonStr.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
