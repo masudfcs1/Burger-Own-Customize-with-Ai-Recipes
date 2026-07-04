@@ -5,7 +5,7 @@ export interface MenuItem {
   image: string;
   price: number;
   calories: number;
-  spicyLevel: number; // 0-5
+  spicyLevel: number;
   isVeg: boolean;
   badge?: 'popular' | 'new' | 'value';
   description: string;
